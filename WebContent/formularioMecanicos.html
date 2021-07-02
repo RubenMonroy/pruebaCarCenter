@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<title>Car Center</title>
+
+<head>
+	<link href="css/estilos.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	
+	<div class="progress">
+		<div class="progress-bar" role="progressbar" style="width: 15%"
+			aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+		<div class="progress-bar bg-success" role="progressbar"
+			style="width: 30%" aria-valuenow="30" aria-valuemin="0"
+			aria-valuemax="100"></div>
+		<div class="progress-bar bg-info" role="progressbar"
+			style="width: 20%" aria-valuenow="20" aria-valuemin="0"
+			aria-valuemax="100"></div>
+	</div>
+	<br>
+	<!-- 	datos mecanicos ini -->
+	<form action="app.jsp" class="datosMecanicos" id="datosMecanicos" >
+		<br>
+		<h5 align="center"><strong>Formulario datos mecánico</strong></h5>
+		<div align="justify" id="inputDatos">
+			<div  class="nombres"><br>
+				<input type="text" name="nombre1" placeholder="*Primer nombre" maxlength="30" required>
+				<input type="text" name="nombre2" placeholder="Segundo nombre" maxlength="30" >
+			</div><br>
+		
+			<div class="apellidos">
+				<input type="text" name="apellido1" placeholder="*Primer apellido" required maxlength="30" > 
+				<input type="text" name="apellido2" placeholder="Segundo apellido" maxlength="30" >
+			</div><br>
+
+			<div class="documento">
+				 <input name="numDocumento" type="number" required placeholder="*Número de documento" maxlength="30">
+				 
+				  <select  name="tipoDocumento" required id="tipoDocumento" 
+				  style='width: 170px; height: 31px'>
+						<option value="0">*Tipo de documento</option>
+						<option value="CC">Cedula</option>
+						<option value="PS">Pasaporte</option>
+						<option value="TI">Tarjeta identidad</option>
+					</select>
+			</div><br>
+
+			<div class="direcciones">
+				<input type="email"name="email" placeholder="*Correo electrónico" required maxlength="100" >
+				<input name="direccion" type="text" id="apellido1" required placeholder="Dirección" maxlength="200" >
+			</div><br>			
+			<div class="select">	
+			<input name="numCelular" type="number" required placeholder="*Número de celular" maxlength="10" >					
+				 <select aria-label="Default select example" name="estado" id="estado"
+					style='width: 170px; height: 32px'>
+					<option value="0">*Estado</option>
+					<option value="1">Libre</option>
+					<option value="2">No Disponible</option>
+				</select>
+			</div><br>
+			
+			<div class="horas"> <label>*Horas trabajadas</label> <input name="horas" size="20" type="number" required 
+				placeholder="Horas mes anterior" maxlength="4" >
+			</div><br>
+			
+			<div id="error" align="center"></div>
+			
+			<div>
+				<button type="submit" class="btn btn-primary" onclick='return validarDatos()'>Registrar</button>
+				<button type="button" class="btn btn-danger" onclick="location.href='fromAsignacionMecanicos.jsp'">Asignación de mecánicos</button>
+			</div><br><br>
+		</div>
+	</form>
+	<!-- 	datos mecanicos fin -->
+	<script src= "js/validaciones.js"></script>
+</body>
+</html>
